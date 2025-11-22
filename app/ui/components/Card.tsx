@@ -47,6 +47,8 @@ export default function Card({ item }: CardProps) {
         ) || []
     : [];
 
+  const hasArea = areas.length > 0;
+
   return (
     <Link
       href={href}
@@ -62,18 +64,27 @@ export default function Card({ item }: CardProps) {
             className='object-cover rounded-md object-center min-h-[200] hover:scale-105 transition-all ease-in-out duration-75'
           />
 
-          {areas.length > 0 && (
+          {/* 地域ラベル */}
+          {hasArea ? (
             <div className='mb-2 flex flex-wrap gap-1  justify-center h-[20]'>
               {areas.map((area: string, index: number) => (
                 <span
                   key={index}
                   className={`${styles.metaAreas} ${styles.meta} px-4 rounded-sm text-sm  bg-theme-300 text-white`}
                 >
-                  {' '}
                   <FontAwesomeIcon icon={faLocationDot} width={10} />
                   {area}
                 </span>
               ))}
+            </div>
+          ) : (
+            <div className='mb-2 flex flex-wrap gap-1  justify-center h-[20]'>
+              <span
+                className={`${styles.metaAreas} ${styles.meta} px-4 rounded-sm text-sm  bg-theme-300 text-white`}
+              >
+                <FontAwesomeIcon icon={faLocationDot} width={10} />
+                北海道
+              </span>
             </div>
           )}
         </div>
