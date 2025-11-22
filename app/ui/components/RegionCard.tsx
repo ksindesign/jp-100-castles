@@ -9,7 +9,7 @@ export default function RegionCard() {
           <Link key={key} href={`/areas/${key}`}>
             <div
               style={{
-                backgroundImage: `url("/images/regions/${key}.jpg")`,
+                backgroundImage: `url("/images/regions/${key}.avif")`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}

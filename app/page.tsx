@@ -18,8 +18,8 @@ export default async function Home() {
         <section className='w-full'>
           <Image
             src='/images/castles-hero.jpg'
-            width={2000}
-            height={2000}
+            width={1800}
+            height={1000}
             alt='日本名城'
             className='w-full max-h-[30vh] object-cover'
           />
