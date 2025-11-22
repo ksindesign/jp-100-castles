@@ -1,0 +1,35 @@
+query GetDestinationsByTaxonomy($name: [String], $first: Int) {
+  allGenreDestination(where: { slug: $name }, first: $first) {
+    nodes {
+      name
+      slug
+      description
+      destinations {
+        nodes {
+          id
+          databaseId
+          uri
+          title
+          slug
+          excerpt
+          genreDestination {
+            nodes {
+              id
+              name
+              slug
+            }
+          }
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+              mediaDetails {
+                width
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

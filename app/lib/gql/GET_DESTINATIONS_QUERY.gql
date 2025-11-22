@@ -1,0 +1,35 @@
+query GetDestinations($first: Int = 10, $search: String = "") {
+  destinations(first: $first, where: { search: $search }) {
+    edges {
+      node {
+        id
+        uri
+        title
+        slug
+        excerpt
+        genreDestination {
+          nodes {
+            name
+          }
+        }
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
+        destinations {
+          labels
+          areas {
+            edges {
+              node {
+                id
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+query GetDestinationBySlug($slug: String!) {
+  destinations(where: { name: $slug }, first: 1) {
+    edges {
+      node {
+        id
+        databaseId
+        uri
+        title
+        slug
+        excerpt
+        genreDestination {
+          nodes {
+            name
+          }
+        }
+        featuredImage {
+          node {
+            title
+            sourceUrl
+            altText
+            mediaDetails {
+              width
+            }
+          }
+        }
+        destinations {
+          businessHours
+          access
+          holiday
+          pr
+          prContent
+          fullAddress {
+            details
+            portal
+            lng
+            lat
+          }
+          tel
+          website
+          sns
+          labels
+        }
+      }
+    }
+  }
+}
