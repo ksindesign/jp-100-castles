@@ -2,6 +2,7 @@ import Areas from '@/app/ui/layout/Areas';
 import NextBreadcrumb from '@/app/ui/components/NextBreadcrumb';
 
 export const regionName = '北海道';
+export const regionSlug = 'hokkaido';
 
 export const metadata: Metadata = {
   title: `${regionName}地區 | TABIPAL - 與你探索日本的魅力所在`,
@@ -20,7 +21,7 @@ export default function HokkaidoPage() {
         capitalizeLinks
       />
       <h1 className='text-3xl'>{regionName}地區</h1>
-      <Areas areaName={regionName} />
+      <Areas areaName={regionSlug} />
     </div>
   );
 }
