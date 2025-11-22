@@ -19,6 +19,7 @@ import {
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import DestinationBreadcrumb from './DestinationBreadcrumb';
 import parse from 'html-react-parser';
+import BackButton from '@/app/ui/components/BackButton';
 
 interface PageProps {
   params: Promise<{
@@ -143,13 +144,20 @@ export default async function DestinationPage({ params }: PageProps) {
           )}
 
           {/* Excerpt */}
-          {destination.excerpt && (
+          {!destination.spotsDetails && destination.excerpt && (
             <section>
               <div>
                 {typeof destination.excerpt === 'string'
                   ? parse(destination.excerpt)
                   : destination.excerpt}
               </div>
+            </section>
+          )}
+
+          {/* Details */}
+          {destination.spotsDetails && (
+            <section>
+              <p>{destination.spotsDetails.spotDetails}</p>
             </section>
           )}
 
@@ -218,15 +226,20 @@ export default async function DestinationPage({ params }: PageProps) {
             {/* Links */}
             <div>
               {fields?.website && (
-                <span>
-                  <Link
-                    href={fields?.website}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <FontAwesomeIcon icon={faHome} width={16} />
-                  </Link>
-                </span>
+                <div>
+                  <dt className='mb-2'>網站</dt>
+                  <dd>
+                    <span>
+                      <Link
+                        href={fields?.website}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        <FontAwesomeIcon icon={faHome} width={16} />
+                      </Link>
+                    </span>
+                  </dd>
+                </div>
               )}
 
               {/* SNS */}
@@ -270,6 +283,8 @@ export default async function DestinationPage({ params }: PageProps) {
             </section>
           )}
         </div>
+
+        <BackButton />
       </article>
     </>
   );

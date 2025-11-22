@@ -6,6 +6,11 @@ import Areas from '@/app/ui/layout/Areas';
 export const regionName = '四國';
 const regionSlug = 'shikoku';
 
+export const metadata: Metadata = {
+  title: `${regionName}地區 | TABIPAL - 與你探索日本的魅力所在`,
+  description: `一個為你網羅${regionName}旅遊相關資訊的網站`,
+};
+
 export default async function ShikokuPage() {
   return (
     <div className='w-full'>

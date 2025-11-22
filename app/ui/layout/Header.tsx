@@ -3,8 +3,15 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Kaisei_Decol } from 'next/font/google';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import SideNav from '../components/SideNav';
+import NavLinks from '../components/NavLinks';
+
+const kaiseiDecol = Kaisei_Decol({
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
+});
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,7 +29,9 @@ export default function Header() {
       <header className='siteHeader w-full flex flex-wrap justify-between  items-center py-5 md:h-[160] px-10 border-b-2 bg-white '>
         <div className='flex gap-10 items-center'>
           <Link href='/' className='no-underline'>
-            <h1 className='uppercase text-5xl text-display mb-2 md:mb-0'>
+            <h1
+              className={`${kaiseiDecol.className} uppercase text-3xl sm:text-4xl md:text-5xl text-display mb-2 md:mb-0`}
+            >
               日本百名城
             </h1>
           </Link>
@@ -41,7 +50,9 @@ export default function Header() {
           </button>
         </div>
       </header>
-
+      <div id='home-nav' className='hidden justify-center'>
+        <NavLinks />
+      </div>
       {/* Backdrop - only shown when menu is open */}
       {isMobileMenuOpen && (
         <div

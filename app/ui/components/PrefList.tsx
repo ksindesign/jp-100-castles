@@ -21,15 +21,18 @@ export default async function PrefList({
   // Convert the AREA_PREFECTURES object to an array of entries
   const prefectureEntries = Object.entries(prefList);
 
-  // Fetch taxonomy data with description using the Japanese prefecture name
-  const taxonomyData = await GetTaxonomyWithDestinations(prefectureName || regionName || '');
-  const description = taxonomyData?.allGenreDestination.nodes[0]?.description;
+  // Fetch taxonomy data with description using the slug (not the Japanese name)
+  // Use prefectureName (slug) or region (slug) for the query
+  const taxonomySlug = prefectureName || region || '';
+  const taxonomyData = await GetTaxonomyWithDestinations(taxonomySlug);
+  const description =
+    taxonomyData?.allGenreDestination?.nodes?.[0]?.description;
 
   return (
-    // for the nav 'border border-grey-100 p-10 px-20 rounded-lg shadow-md border-t-4  border-t-theme-300'
     <nav className='mb-8'>
+      {/* Display taxonomy description */}
       {description && (
-        <div className='mt-6 p-4 bg-gray-50 rounded-lg'>
+        <div className='my-6 p-4 bg-gray-50 rounded-lg border-l-4 border-theme-300'>
           <p className='text-gray-700 leading-relaxed'>{description}</p>
         </div>
       )}

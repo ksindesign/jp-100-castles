@@ -57,6 +57,9 @@ export interface Destination {
       name?: string;
     };
   };
+  spotsDetails?: {
+    spotDetails?: string;
+  };
 }
 
 // GraphQL Response Types
@@ -72,12 +75,13 @@ export interface DestinationsResponse {
 
 export interface GenreNode {
   name: string;
+  description?: string;
 }
 
 export interface GenreDestinationNode {
   name: string;
   slug: string;
-  description?: string;
+  description?: string | null;
   destinations: {
     nodes: Destination[];
   };
@@ -85,6 +89,6 @@ export interface GenreDestinationNode {
 
 export interface GenreDestinationResponse {
   allGenreDestination: {
-    nodes: Destination[];
+    nodes: GenreDestinationNode[];
   };
 }

@@ -73,6 +73,7 @@ export default async function ShikokuPrefecturePage({ params }: PageProps) {
           region='shikoku'
           regionName={regionName}
           prefList={SHIKOKU_PREFECTURES}
+          prefectureName={slug}
         />
       </section>
       <Pref prefectureName={slug} />

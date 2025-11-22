@@ -47,7 +47,9 @@ export async function GetDestinationsByTaxonomy(
     );
 
     // Extract all destinations from all matching genre nodes
-    const destinations = data.allGenreDestination.nodes;
+    const destinations = data.allGenreDestination.nodes.flatMap(
+      (node) => node.destinations.nodes
+    );
 
     return destinations;
   } catch (error) {

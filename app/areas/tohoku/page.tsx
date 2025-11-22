@@ -8,8 +8,8 @@ export const regionName = '東北';
 const regionSlug = 'tohoku';
 
 export const metadata: Metadata = {
-  title: '東北地區 | TABIPAL - 與你探索日本的魅力所在',
-  description: '一個為你網羅東北旅遊相關資訊的網站',
+  title: `${regionName}地區 | TABIPAL - 與你探索日本的魅力所在`,
+  description: `一個為你網羅${regionName}旅遊相關資訊的網站`,
 };
 
 export default function TohokuPage() {

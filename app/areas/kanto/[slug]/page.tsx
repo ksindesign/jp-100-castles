@@ -76,7 +76,7 @@ export default async function KantoPrefecturePage({ params }: PageProps) {
           region={regionSlug}
           prefList={KANTO_PREFECTURES}
           regionName={regionName}
-          prefectureName={prefectureName}
+          prefectureName={slug}
           regionPage={false}
         />
       </section>

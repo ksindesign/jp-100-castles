@@ -6,6 +6,11 @@ import { KANTO_PREFECTURES } from './[slug]/page';
 export const regionSlug = 'kanto';
 export const regionName = '關東';
 
+export const metadata: Metadata = {
+  title: `${regionName}地區 | TABIPAL - 與你探索日本的魅力所在`,
+  description: `一個為你網羅${regionName}旅遊相關資訊的網站`,
+};
+
 export default function KantoPage() {
   return (
     <div className=''>

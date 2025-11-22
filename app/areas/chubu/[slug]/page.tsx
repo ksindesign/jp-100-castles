@@ -77,6 +77,7 @@ export default async function TohokuPrefecturePage({ params }: PageProps) {
           prefList={CHUBU_PREFECTURES}
           region={regionSlug}
           regionName={regionName}
+          prefectureName={slug}
         />
       </section>
       <Pref prefectureName={slug} />

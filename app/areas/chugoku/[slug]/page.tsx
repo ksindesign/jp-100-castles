@@ -73,6 +73,7 @@ export default async function TohokuPrefecturePage({ params }: PageProps) {
           region={regionSlug}
           prefList={CHUGOKU_PREFECTURES}
           regionName={regionName}
+          prefectureName={slug}
         />
       </section>
 

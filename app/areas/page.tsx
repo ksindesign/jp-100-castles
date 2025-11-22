@@ -17,7 +17,7 @@ export default function DestinationsPage() {
         <p className='text-2xl'>來一起探索日本百名城的魅力吧！</p>
       </section>
 
-      <section className='flex gap-6 flex-wrap'>
+      <section className='flex gap-6 flex-wrap justify-center'>
         <RegionCard />
       </section>
     </div>

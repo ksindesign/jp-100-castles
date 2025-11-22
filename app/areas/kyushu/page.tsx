@@ -6,9 +6,14 @@ import Areas from '@/app/ui/layout/Areas';
 export const regionName = '九州';
 const regionSlug = 'kyushu';
 
+export const metadata: Metadata = {
+  title: `${regionName}地區 | 日本百名城 - 與你探索日本的魅力所在`,
+  description: `一個為你網羅${regionName}旅遊相關資訊的網站`,
+};
+
 export default function KyushuPage() {
   return (
-    <div className=''>
+    <div className='w-full'>
       <NextBreadcrumb
         homeElement
         separator={<span> / </span>}

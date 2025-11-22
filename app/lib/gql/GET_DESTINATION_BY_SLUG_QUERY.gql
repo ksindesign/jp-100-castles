@@ -40,6 +40,9 @@ query GetDestinationBySlug($slug: String!) {
           sns
           labels
         }
+        spotsDetails {
+          spotDetails
+        }
       }
     }
   }

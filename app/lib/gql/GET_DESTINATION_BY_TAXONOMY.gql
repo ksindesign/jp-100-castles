@@ -12,6 +12,9 @@ query GetDestinationsByTaxonomy($name: [String], $first: Int) {
           title
           slug
           excerpt
+          destinations {
+            labels
+          }
           genreDestination {
             nodes {
               id

@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${prefectureName} | 近畿地區 | Tabipal`,
+    title: `${prefectureName} | ${regionName}地區 | 日本百名城`,
     description: `探索${prefectureName}的觀光景點、美食、住宿等資訊`,
   };
 }
@@ -75,6 +75,7 @@ export default async function TohokuPrefecturePage({ params }: PageProps) {
           prefList={KINKI_PREFECTURES}
           region={regionSlug}
           regionName={regionName}
+          prefectureName={slug}
         />
       </section>
       <Pref prefectureName={slug} />

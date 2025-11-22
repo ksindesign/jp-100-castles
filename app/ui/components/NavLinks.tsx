@@ -23,7 +23,7 @@ export default function NavLinks({ onLinkClick }: NavLinksProps) {
   const isHome = pathname === '/';
 
   return (
-    <nav className={clsx({ 'flex flex-wrap': isHome })}>
+    <nav className={'flex-wrap w-full flex justify-center'}>
       {links.map((link) => {
         // Check if current path matches the link
         // For /destinations, also match child routes like /destinations/[slug]

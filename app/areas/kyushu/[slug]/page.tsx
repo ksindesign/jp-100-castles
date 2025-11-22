@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${prefectureName} | 九州地區 | Tabipal`,
+    title: `${prefectureName} | ${regionName}地區 | Tabipal`,
     description: `探索${prefectureName}的觀光景點、美食、住宿等資訊`,
   };
 }
@@ -56,7 +56,7 @@ export default async function TohokuPrefecturePage({ params }: PageProps) {
   }
 
   return (
-    <div className='max-w-[1200] flex flex-col'>
+    <div className='w-full flex flex-col'>
       <NextBreadcrumb
         homeElement
         separator={<span> / </span>}
@@ -76,6 +76,7 @@ export default async function TohokuPrefecturePage({ params }: PageProps) {
           region='kyushu'
           regionName={regionName}
           prefList={KYUSHU_PREFECTURES}
+          prefectureName={slug}
         />
       </section>
       <Pref prefectureName={slug} />

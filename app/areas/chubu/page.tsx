@@ -6,6 +6,11 @@ import PrefList from '@/app/ui/components/PrefList';
 export const regionName = '中部';
 export const regionSlug = 'chubu';
 
+export const metadata: Metadata = {
+  title: `${regionName}地區 | TABIPAL - 與你探索日本的魅力所在`,
+  description: `一個為你網羅${regionName}旅遊相關資訊的網站`,
+};
+
 export default function ChubuPage() {
   return (
     <div className=''>
@@ -17,9 +22,9 @@ export default function ChubuPage() {
         containerClasses='w-full p-4 '
         capitalizeLinks
       />
-      <h1 className='text-3xl'>中部地區</h1>
+      <h1 className='text-3xl'>{regionName}地區</h1>
       <PrefList
-        region='chubu'
+        region={regionSlug}
         prefList={CHUBU_PREFECTURES}
         regionName={regionName}
       />
