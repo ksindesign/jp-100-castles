@@ -28,7 +28,7 @@ export default function ChubuPage() {
         prefList={CHUBU_PREFECTURES}
         regionName={regionName}
       />
-      <Areas areaName={regionName} />
+      <Areas areaName={regionSlug} />
     </div>
   );
 }

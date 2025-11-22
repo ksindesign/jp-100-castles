@@ -70,7 +70,7 @@ export default async function TohokuPrefecturePage({ params }: PageProps) {
       <section className='mb-12 mx-4'>
         <h1 className='mb-4 text-4xl font-bold my-10'>
           {prefectureName}
-          <span className='text-2xl text-gray-500 ml-3'>中部地區</span>
+          <span className='text-2xl text-gray-500 ml-3'>{regionName}地區</span>
         </h1>
         <p className='text-xl text-gray-600'>探索{prefectureName}的魅力景點</p>
         <PrefList

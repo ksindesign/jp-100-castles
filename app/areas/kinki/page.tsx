@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function KinkiPage() {
   return (
-    <div className='max-w-[800]'>
+    <div className='w-full'>
       <NextBreadcrumb
         homeElement
         separator={<span> / </span>}
