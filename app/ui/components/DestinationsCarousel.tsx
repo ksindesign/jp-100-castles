@@ -1,7 +1,7 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -21,11 +21,11 @@ export default function DestinationsCarousel({
 
   return (
     <Swiper
-      modules={[Navigation, Pagination]}
+      modules={[Navigation, Pagination, Mousewheel]}
       spaceBetween={20}
-      slidesPerView={1}
-      navigation
+      slidesPerView={4}
       pagination={{ clickable: true }}
+      mousewheel={true}
       breakpoints={{
         640: {
           slidesPerView: 2,

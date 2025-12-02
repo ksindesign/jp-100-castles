@@ -9,7 +9,7 @@ import SideNav from '../components/SideNav';
 import NavLinks from '../components/NavLinks';
 
 const kaiseiDecol = Kaisei_Decol({
-  weight: ['400', '500', '700'],
+  weight: '700',
   subsets: ['latin'],
 });
 

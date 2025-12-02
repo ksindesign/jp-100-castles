@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { getDestinations, filterByHyakumeijo } from './lib/api';
 import RegionCard from './ui/components/RegionCard';
 import DestinationsCarousel from './ui/components/DestinationsCarousel';
-import SearchButton from './ui/components/DestinationFilter';
 
 export default async function Home() {
   // Fetch destinations and filter for 百名城 only
@@ -45,6 +44,7 @@ export default async function Home() {
         {/* Destinations Section */}
         <section className='my-[60]'>
           <div className='flex items-end justify-between'>
+            {/* Showing the first 10 destinations randomly */}
             <h2 className='text-3xl font-bold'>日本名城</h2>
             <Link
               href='/destinations'
@@ -54,7 +54,11 @@ export default async function Home() {
             </Link>
           </div>
           <div className='mx-auto max-w-7xl px-4 carousel_home-destination'>
-            <DestinationsCarousel destinations={destinations} />
+            <DestinationsCarousel
+              destinations={destinations
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 10)}
+            />
           </div>
         </section>
       </main>
