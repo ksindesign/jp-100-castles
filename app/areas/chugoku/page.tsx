@@ -2,6 +2,7 @@ import Areas from '@/app/ui/layout/Areas';
 import NextBreadcrumb from '@/app/ui/components/NextBreadcrumb';
 import PrefList from '@/app/ui/components/PrefList';
 import { CHUGOKU_PREFECTURES } from '../chugoku/[slug]/page';
+import { Metadata } from 'next';
 
 export const regionName = '中國';
 export const regionSlug = 'chugoku';

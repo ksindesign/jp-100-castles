@@ -2,17 +2,21 @@
   "name": "jp-100-castles",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://ksindesign.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.0",
     "clsx": "^2.1.1",
+    "gh-pages": "^6.3.0",
     "html-react-parser": "^5.2.10",
     "next": "16.0.3",
     "react": "19.2.0",

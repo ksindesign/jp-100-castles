@@ -6,14 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 interface CardProps {
-  item: Destination | RelatedSpot;
-  type?: 'destination';
+  item: Destination;
 }
 
 export default function Card({ item }: CardProps) {
   const href = `/destinations/${item.slug}`;
-  const imageUrl =
-    item.featuredImage?.node.sourceUrl || '/images/placeholder.jpg';
+  const imageUrl = item.featuredImage?.node.sourceUrl || '/placeholder.jpg';
   const imageAlt = item.featuredImage?.node.altText || item.title;
 
   // Type guard to check if item is Destination

@@ -1,5 +1,6 @@
 import Areas from '@/app/ui/layout/Areas';
 import NextBreadcrumb from '@/app/ui/components/NextBreadcrumb';
+import { Metadata } from 'next';
 
 export const regionName = '北海道';
 export const regionSlug = 'hokkaido';

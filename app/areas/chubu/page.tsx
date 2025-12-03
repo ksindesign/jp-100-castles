@@ -2,6 +2,7 @@ import Areas from '@/app/ui/layout/Areas';
 import NextBreadcrumb from '@/app/ui/components/NextBreadcrumb';
 import { CHUBU_PREFECTURES } from './[slug]/page';
 import PrefList from '@/app/ui/components/PrefList';
+import { Metadata } from 'next';
 
 export const regionName = '中部';
 export const regionSlug = 'chubu';

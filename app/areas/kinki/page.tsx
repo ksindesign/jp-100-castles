@@ -2,6 +2,7 @@ import NextBreadcrumb from '@/app/ui/components/NextBreadcrumb';
 import { KINKI_PREFECTURES } from './[slug]/page';
 import PrefList from '@/app/ui/components/PrefList';
 import Areas from '@/app/ui/layout/Areas';
+import { Metadata } from 'next';
 
 export const regionName = '近畿';
 export const regionSlug = 'kinki';

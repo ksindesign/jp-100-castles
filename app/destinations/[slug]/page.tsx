@@ -68,7 +68,7 @@ export default async function DestinationPage({ params }: PageProps) {
   const fields = destination.destinations;
   const areas = destination.genreDestination?.nodes || [];
   const imageUrl =
-    destination.featuredImage?.node.sourceUrl || '/images/placeholder.jpg';
+    destination.featuredImage?.node.sourceUrl || '/placeholder.jpg';
   const imageAlt = destination.featuredImage?.node.altText || destination.title;
   const imageWidth = destination.featuredImage?.node.mediaDetails?.width;
   const address = fields?.fullAddress;
@@ -119,9 +119,9 @@ export default async function DestinationPage({ params }: PageProps) {
           {/* Feature Image */}
           <div className='relative text-center'>
             <Image
-              src={imageUrl}
+              src={imageUrl || '/placeholder.jpg'}
               alt={imageAlt}
-              width={imageWidth}
+              width={imageWidth || 600}
               height={400}
               className={`object-cover object-center rounded-xl overflow-hidden h-[400]`}
             />

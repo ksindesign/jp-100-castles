@@ -2,6 +2,7 @@ import Areas from '@/app/ui/layout/Areas';
 import NextBreadcrumb from '@/app/ui/components/NextBreadcrumb';
 import PrefList from '@/app/ui/components/PrefList';
 import { KANTO_PREFECTURES } from './[slug]/page';
+import { Metadata } from 'next';
 
 export const regionSlug = 'kanto';
 export const regionName = '關東';

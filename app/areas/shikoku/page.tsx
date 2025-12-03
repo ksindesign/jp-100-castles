@@ -2,6 +2,7 @@ import NextBreadcrumb from '@/app/ui/components/NextBreadcrumb';
 import PrefList from '@/app/ui/components/PrefList';
 import { SHIKOKU_PREFECTURES } from './[slug]/page';
 import Areas from '@/app/ui/layout/Areas';
+import { Metadata } from 'next';
 
 export const regionName = '四國';
 const regionSlug = 'shikoku';
