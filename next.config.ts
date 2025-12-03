@@ -1,8 +1,6 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // ↓ next build を実行する際に Static Export を利用します。
-  output: 'export',
   images: {
     remotePatterns: [
       {

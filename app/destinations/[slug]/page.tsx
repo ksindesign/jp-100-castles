@@ -73,9 +73,6 @@ export default async function DestinationPage({ params }: PageProps) {
   const imageWidth = destination.featuredImage?.node.mediaDetails?.width;
   const address = fields?.fullAddress;
 
-  // Fetch all destinations
-  const allDestinations = await getDestinations(20); // Fetch more destinations for better matching
-
   return (
     <>
       {/* Breadcrumb */}
