@@ -23,7 +23,7 @@ export default function DestinationsCarousel({
     <Swiper
       modules={[Navigation, Pagination, Mousewheel]}
       spaceBetween={20}
-      slidesPerView={4}
+      slidesPerView={1}
       pagination={{ clickable: true }}
       mousewheel={true}
       breakpoints={{
