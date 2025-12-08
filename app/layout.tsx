@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Manrope, Noto_Sans_TC } from 'next/font/google';
 import Header from '@/app/ui/layout/Header';
@@ -50,6 +51,7 @@ export default function RootLayout({
           <BackToTop />
         </div>
         <MobileNav />
+        <Analytics />
       </body>
     </html>
   );
