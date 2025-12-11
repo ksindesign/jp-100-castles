@@ -72,6 +72,7 @@ export default async function DestinationPage({ params }: PageProps) {
   const imageAlt = destination.featuredImage?.node.altText || destination.title;
   const imageWidth = destination.featuredImage?.node.mediaDetails?.width;
   const address = fields?.fullAddress;
+  const spotsDetails = destination.spotsDetails?.spotDetails || null;
 
   return (
     <>
@@ -141,20 +142,13 @@ export default async function DestinationPage({ params }: PageProps) {
           )}
 
           {/* Excerpt */}
-          {!destination.spotsDetails && destination.excerpt && (
+          {destination.excerpt && (
             <section>
               <div>
                 {typeof destination.excerpt === 'string'
                   ? parse(destination.excerpt)
                   : destination.excerpt}
               </div>
-            </section>
-          )}
-
-          {/* Details */}
-          {destination.spotsDetails && (
-            <section>
-              <p>{destination.spotsDetails.spotDetails}</p>
             </section>
           )}
 
@@ -254,32 +248,40 @@ export default async function DestinationPage({ params }: PageProps) {
             </div>
           </section>
 
-          {/* Map */}
-          {address?.lat && address?.lng && (
-            <section className='md:p-6'>
-              <h2 className='text-2xl font-semibold '>Google Map</h2>
-              <div className='aspect-video w-full overflow-hidden h-[400]'>
-                <iframe
-                  src={`https://maps.google.com/maps?output=embed&q=${encodeURIComponent(
-                    destination.title
-                  )}&ll=${address.lat},${address.lng}&t=m&hl=ja&z=10`}
-                  width='100%'
-                  height='100%'
-                  className='my-5'
-                  allowFullScreen
-                  loading='lazy'
-                ></iframe>
-              </div>
+          {/* Details */}
+          {spotsDetails && (
+            <section className='mt-8'>
+              <h2 className='text-2xl font-semibold'>景點詳情</h2>
+              <div className='mt-4'>{parse(spotsDetails)}</div>
             </section>
           )}
 
           {/* No content message */}
-          {!destination.excerpt && !fields?.pr && (
+          {!destination.excerpt && !spotsDetails && !fields?.pr && (
             <section className='text-center'>
               <p className='text-gray-400'>這個景點內容有待更新</p>
             </section>
           )}
         </div>
+
+        {/* Map */}
+        {address?.lat && address?.lng && (
+          <section className='md:p-6'>
+            <h2 className='text-2xl font-semibold '>Google Map</h2>
+            <div className='aspect-video w-full overflow-hidden h-[400]'>
+              <iframe
+                src={`https://maps.google.com/maps?output=embed&q=${encodeURIComponent(
+                  destination.title
+                )}&ll=${address.lat},${address.lng}&t=m&hl=ja&z=10`}
+                width='100%'
+                height='100%'
+                className='my-5'
+                allowFullScreen
+                loading='lazy'
+              ></iframe>
+            </div>
+          </section>
+        )}
 
         <BackButton />
       </article>

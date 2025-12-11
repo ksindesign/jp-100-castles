@@ -12,6 +12,9 @@ query GetDestinations($first: Int = 10, $search: String = "") {
             name
           }
         }
+        spotsDetails {
+          spotDetails
+        }
         featuredImage {
           node {
             sourceUrl

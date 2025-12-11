@@ -28,6 +28,11 @@ export interface DestinationFields {
   sns?: string;
   areas: Areas;
   labels?: string[];
+  spotsDetails?: SpotsDetails;
+}
+
+export interface SpotsDetails {
+  spotDetails?: string;
 }
 
 export interface Destination {
@@ -57,9 +62,7 @@ export interface Destination {
       name?: string;
     };
   };
-  spotsDetails?: {
-    spotDetails?: string;
-  };
+  spotsDetails?: SpotsDetails;
 }
 
 // GraphQL Response Types
