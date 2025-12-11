@@ -7,7 +7,6 @@ import {
   faHouse,
   faMap,
   faCircleInfo,
-  faPhone,
 } from '@fortawesome/free-solid-svg-icons';
 
 const styles = {
@@ -79,16 +78,6 @@ export default function MobileNav() {
               className={styles.mobileNavItemIcon}
             />
             關於我們
-          </li>
-        </Link>
-        <Link href={'/contact'}>
-          <li className={styles.mobileNavItem}>
-            <FontAwesomeIcon
-              icon={faPhone}
-              width={16}
-              className={styles.mobileNavItemIcon}
-            />
-            聯絡我們
           </li>
         </Link>
       </ul>
