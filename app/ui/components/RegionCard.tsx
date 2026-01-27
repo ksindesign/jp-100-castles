@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PREFLIST } from '@/app/api/data';
+import { PREFLIST } from '@/app/constants/list';
 
 export default function RegionCard() {
   return (

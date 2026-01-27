@@ -12,6 +12,10 @@ export const links = [
     name: '百名城一覽',
     href: '/destinations',
   },
+  {
+    name: '關於我們',
+    href: '/about',
+  },
 ];
 
 interface NavLinksProps {
@@ -40,7 +44,7 @@ export default function NavLinks({ onLinkClick }: NavLinksProps) {
               {
                 'font-bold text-active': isActive,
                 'inline-block': isHome,
-              }
+              },
             )}
           >
             <p className='md:block'>{link.name}</p>

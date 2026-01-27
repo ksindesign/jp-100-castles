@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getDestinations, filterByHyakumeijo } from './lib/api';
@@ -11,7 +10,7 @@ export default async function Home() {
   const destinations = filterByHyakumeijo(allDestinations);
 
   return (
-    <React.Fragment>
+    <>
       <main className='flex flex-col mb-[100] max-w-7xl mx-auto'>
         {/* About */}
         <section className='w-full'>
@@ -62,6 +61,6 @@ export default async function Home() {
           </div>
         </section>
       </main>
-    </React.Fragment>
+    </>
   );
 }
