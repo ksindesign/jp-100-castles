@@ -27,10 +27,10 @@ export default function MobileNav() {
       const current = window.scrollY;
 
       if (current > lastScroll && current > 50) {
-        // 下スクロール → 隠す
+        // scroll down to hide
         setHide(true);
       } else {
-        // 上スクロール → 表示
+        // scroll up to show
         setHide(false);
       }
 
