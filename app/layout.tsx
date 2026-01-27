@@ -35,14 +35,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='zh-HK'>
+    <html lang='zh-HK' data-scroll-behavior='smooth'>
       <head>
         <meta name='mobile-web-app-capable' content='yes' />
         <meta name='apple-mobile-web-app-capable' content='yes' />
       </head>
       <body
         className={`${manropeSans.variable} ${notoSansTC.variable} antialiased bg-white`}
-        data-scroll-behavior='smooth'
       >
         <Header />
         <main className='mx-auto'>{children}</main>
