@@ -1,5 +1,5 @@
 import { Analytics } from '@vercel/analytics/next';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Manrope, Noto_Sans_TC } from 'next/font/google';
 import Header from './ui/layout/Header';
 import Footer from './ui/layout/Footer';
@@ -17,16 +17,17 @@ const notoSansTC = Noto_Sans_TC({
   subsets: ['latin'],
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: 'oklch(0.6973 0.0967 200.3)',
+};
+
 export const metadata: Metadata = {
   title: '日本百名城',
   description: '一個提供日本百名城相關資訊的網站',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
-  themeColor: '#000000',
 };
 
 export default function RootLayout({
