@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-export default function Page() {
+export default function AboutPage() {
   return (
-    <div className='max-w-5xl mx-auto min-h-screen bg-white px-4 py-8'>
+    <div className='max-w-5xl mx-auto min-h-screen bg-white py-8'>
       <h1 className='text-theme-400 text-5xl mb-8 font-bold'>關於這個網站</h1>
 
       <section className='mb-12'>

@@ -1,8 +1,8 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Manrope, Noto_Sans_TC } from 'next/font/google';
-import Header from '@/app/ui/layout/Header';
-import Footer from '@/app/ui/layout/Footer';
+import Header from './ui/layout/Header';
+import Footer from './ui/layout/Footer';
 import './ui/styles/globals.css';
 import BackToTop from './ui/components/BackToTop';
 import MobileNav from './ui/components/MobileNav';
