@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Pref from '@/app/ui/layout/Pref';
 import { regionName } from '../page';
 import PrefList from '@/app/ui/components/PrefList';
+import { siteName } from '@/app/constants/list';
 
 interface PageProps {
   params: Promise<{
@@ -10,7 +11,6 @@ interface PageProps {
   }>;
 }
 
-// Prefecture mapping: slug -> Japanese name
 export const SHIKOKU_PREFECTURES: Record<string, string> = {
   ehime: '愛媛',
   tokushima: '徳島',
@@ -25,7 +25,6 @@ export async function generateStaticParams() {
   }));
 }
 
-// Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
 
@@ -38,8 +37,8 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${prefectureName} | 四國地區 | Tabipal`,
-    description: `探索${prefectureName}的觀光景點、美食、住宿等資訊`,
+    title: `${prefectureName} | ${regionName}地區 | ${siteName}`,
+    description: `探索${prefectureName}的觀光資訊`,
   };
 }
 
@@ -47,7 +46,6 @@ export default async function ShikokuPrefecturePage({ params }: PageProps) {
   const { slug } = await params;
   const prefectureName = SHIKOKU_PREFECTURES[slug];
 
-  // If the slug doesn't match any prefecture, return 404
   if (!prefectureName) {
     notFound();
   }

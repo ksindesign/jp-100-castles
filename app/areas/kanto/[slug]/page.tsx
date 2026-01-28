@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import PrefList from '@/app/ui/components/PrefList';
 
 import { regionName, regionSlug } from '../page';
+import { siteName } from '@/app/constants/list';
 
 interface PageProps {
   params: Promise<{
@@ -11,7 +12,6 @@ interface PageProps {
   }>;
 }
 
-// Prefecture mapping: slug -> Japanese name
 export const KANTO_PREFECTURES: Record<string, string> = {
   tokyo: '東京',
   saitama: '埼玉',
@@ -41,8 +41,8 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${prefectureName} | ${regionName}地區 | Tabipal`,
-    description: `探索${prefectureName}的觀光景點、美食、住宿等資訊`,
+    title: `${prefectureName} | ${regionName}地區 | ${siteName}`,
+    description: `探索${prefectureName}的觀光資訊`,
   };
 }
 
@@ -71,7 +71,7 @@ export default async function KantoPrefecturePage({ params }: PageProps) {
           {prefectureName}
           <span className='text-2xl text-gray-500 ml-3'>{regionName}地區</span>
         </h1>
-        <p className='text-xl text-gray-600'>探索{prefectureName}的魅力景點</p>
+        <p className='text-xl text-gray-600'>探索{prefectureName}的魅力城堡</p>
         <PrefList
           region={regionSlug}
           prefList={KANTO_PREFECTURES}

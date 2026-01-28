@@ -3,6 +3,7 @@ import PrefList from '@/app/ui/components/PrefList';
 import NextBreadcrumb from '@/app/ui/components/NextBreadcrumb';
 import { notFound } from 'next/navigation';
 import { regionName, regionSlug } from '../page';
+import { siteName } from '@/app/constants/list';
 
 interface PageProps {
   params: Promise<{
@@ -40,8 +41,8 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${prefectureName} | ${regionName}地區 | 日本百名城`,
-    description: `探索${prefectureName}的觀光景點、美食、住宿等資訊`,
+    title: `${prefectureName} | ${regionName}地區 | ${siteName}`,
+    description: `探索${prefectureName}的觀光資訊`,
   };
 }
 
@@ -68,9 +69,9 @@ export default async function TohokuPrefecturePage({ params }: PageProps) {
       <section className='mb-12 mx-4'>
         <h1 className='mb-4 text-4xl font-bold my-10'>
           {prefectureName}
-          <span className='text-2xl text-gray-500 ml-3'>近畿地區</span>
+          <span className='text-2xl text-gray-500 ml-3'>{regionName}地區</span>
         </h1>
-        <p className='text-xl text-gray-600'>探索{prefectureName}的魅力景點</p>
+        <p className='text-xl text-gray-600'>探索{prefectureName}的魅力城堡</p>
         <PrefList
           prefList={KINKI_PREFECTURES}
           region={regionSlug}
