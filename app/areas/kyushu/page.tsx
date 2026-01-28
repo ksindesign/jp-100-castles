@@ -3,15 +3,15 @@ import { KYUSHU_PREFECTURES } from './[slug]/page';
 import PrefList from '@/app/ui/components/PrefList';
 import Areas from '@/app/ui/layout/Areas';
 import { Metadata } from 'next';
+import { siteName } from '@/app/constants/list';
 
 export const regionName = '九州';
 const regionSlug = 'kyushu';
 
 export const metadata: Metadata = {
-  title: `${regionName}地區 | 日本百名城 - 與你探索日本的魅力所在`,
-  description: `一個為你網羅${regionName}旅遊相關資訊的網站`,
+  title: `${regionName}地區 | ${siteName}`,
+  description: `一個為你網羅${regionName}地區的旅遊資訊網站`,
 };
-
 export default function KyushuPage() {
   return (
     <div className='w-full'>
