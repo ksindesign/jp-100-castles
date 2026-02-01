@@ -75,7 +75,6 @@ explore these magnificent castles organized by region and prefecture.
 ```
 jp-100-castles/
 ├── app/
-│   ├── api/              # API data constants
 │   ├── areas/            # Region and prefecture pages
 │   │   ├── tohoku/
 │   │   ├── kanto/
@@ -84,6 +83,7 @@ jp-100-castles/
 │   │   ├── chugoku/
 │   │   ├── shikoku/
 │   │   └── kyushu/
+│   ├── constants/        # Constant data
 │   ├── destinations/     # Castle listing and detail pages
 │   ├── lib/              # Utilities and API functions
 │   │   ├── api.ts        # API functions

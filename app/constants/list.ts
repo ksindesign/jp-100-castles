@@ -1,4 +1,4 @@
-export const PREFLIST: Record<string, string> = {
+const PREFLIST: Record<string, string> = {
   hokkaido: '北海道',
   tohoku: '東北',
   kanto: '關東',
@@ -8,3 +8,7 @@ export const PREFLIST: Record<string, string> = {
   shikoku: '四國',
   kyushu: '九州',
 };
+
+const siteName = '日本百名城';
+
+export { PREFLIST, siteName };

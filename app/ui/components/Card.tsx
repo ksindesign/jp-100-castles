@@ -41,7 +41,7 @@ export default function Card({ item }: CardProps) {
         ?.map((node) => node.name)
         .filter(
           (name): name is string =>
-            name !== undefined && !REGIONAL_AREAS.includes(name)
+            name !== undefined && !REGIONAL_AREAS.includes(name),
         ) || []
     : [];
 
@@ -50,7 +50,7 @@ export default function Card({ item }: CardProps) {
   return (
     <Link
       href={href}
-      className={`${styles.card} max-w-[400] min-w-[250] inline-block w-5/6 overflow-hidden mx-auto  py-5`}
+      className={`${styles.card} max-w-[400] min-w-[250] inline-block w-full overflow-hidden mx-auto  py-5`}
     >
       <div className='cardInner'>
         <div className='imgContainer relative rounded-md text-center overflow-hidden max-h-[200]'>

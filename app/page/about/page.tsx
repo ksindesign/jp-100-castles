@@ -5,7 +5,7 @@ export default function AboutPage() {
     <div className='max-w-5xl mx-auto min-h-screen bg-white py-8'>
       <h1 className='text-theme-400 text-5xl mb-8 font-bold'>關於這個網站</h1>
 
-      <section className='mb-12'>
+      <section className='mb-12 w-full px-4'>
         <div>
           <p>此網證為個人開發網站，不涉及商業用途。</p>
           <p>網站內容持續更新中。</p>
