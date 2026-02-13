@@ -1,9 +1,6 @@
 import React from 'react';
 import Card from '@/app/ui/components/Card';
-import {
-  GetDestinationsByTaxonomy,
-  filterByHyakumeijo,
-} from '@/app/lib/api';
+import { GetDestinationsByTaxonomy, filterByHyakumeijo } from '@/app/lib/api';
 
 type Areas = {
   areaName: string;
