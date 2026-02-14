@@ -1,9 +1,6 @@
 import React from 'react';
 import Card from '@/app/ui/components/Card';
-import {
-  GetDestinationsByTaxonomy,
-  filterByHyakumeijo,
-} from '@/app/lib/api';
+import { GetDestinationsByTaxonomy, filterByHyakumeijo } from '@/app/lib/api';
 
 type Areas = {
   areaName: string;
@@ -17,7 +14,7 @@ export default async function Areas({ areaName }: Areas) {
 
   return (
     <section className='flex'>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center'>
+      <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center'>
         {destinations.map((destination) => (
           <article key={destination.id}>
             <Card key={destination.id} item={destination} />
