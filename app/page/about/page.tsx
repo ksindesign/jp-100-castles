@@ -7,7 +7,7 @@ export default function AboutPage() {
 
       <section className='mb-12 w-full px-4'>
         <div>
-          <p>此網證為個人開發網站，不涉及商業用途。</p>
+          <p>此網站為個人開發網站，不涉及商業用途。</p>
           <p>網站內容持續更新中。</p>
           <p>部分圖片來源於網路，如有侵權請聯繫刪除。</p>
         </div>
