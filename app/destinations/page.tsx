@@ -9,7 +9,7 @@ export default async function DestinationsPage() {
   const allDestinations = await getDestinations(100);
 
   // Filter destinations that have "百名城" in their labels
-  const destinations = filterByHyakumeijo(allDestinations);
+  const destinations = await filterByHyakumeijo(allDestinations);
 
   return (
     <div className='mx-auto w-full flex flex-col'>

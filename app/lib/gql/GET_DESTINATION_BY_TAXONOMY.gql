@@ -14,6 +14,12 @@ query GetDestinationsByTaxonomy($name: [String], $first: Int) {
           excerpt
           destinations {
             labels
+            fullAddress {
+              details
+              portal
+              lat
+              lng
+            }
           }
           genreDestination {
             nodes {

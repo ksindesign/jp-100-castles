@@ -7,6 +7,7 @@ import {
   faHouse,
   faMap,
   faCircleInfo,
+  faList,
 } from '@fortawesome/free-solid-svg-icons';
 
 const styles = {
@@ -61,6 +62,16 @@ export default function MobileNav() {
           </li>
         </Link>
         <Link href={'/destinations'}>
+          <li className={styles.mobileNavItem}>
+            <FontAwesomeIcon
+              icon={faList}
+              className={styles.mobileNavItemIcon}
+              width={16}
+            />
+            名城一覽
+          </li>
+        </Link>
+        <Link href={'/map'}>
           <li className={styles.mobileNavItem}>
             <FontAwesomeIcon
               icon={faMap}
