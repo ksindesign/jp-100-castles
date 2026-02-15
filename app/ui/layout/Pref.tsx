@@ -1,8 +1,5 @@
 import Card from '@/app/ui/components/Card';
-import {
-  GetDestinationsByTaxonomy,
-  filterByHyakumeijo,
-} from '@/app/lib/api';
+import { GetDestinationsByTaxonomy, filterByHyakumeijo } from '@/app/lib/api';
 
 interface PrefProps {
   prefectureName: string;
@@ -12,7 +9,7 @@ export default async function Pref({ prefectureName }: PrefProps) {
   // Fetch destinations by prefecture taxonomy
   const allDestinations = await GetDestinationsByTaxonomy(prefectureName, 100);
   // Filter for 百名城 only
-  const destinations = filterByHyakumeijo(allDestinations);
+  const destinations = await filterByHyakumeijo(allDestinations);
 
   return (
     <section>

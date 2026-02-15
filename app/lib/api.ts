@@ -1,3 +1,5 @@
+'use server';
+
 import { fetchGraphQL } from './graphql';
 import {
   DestinationsResponse,
@@ -11,7 +13,9 @@ import {
 } from './queries';
 
 // Helper function to filter destinations with 百名城 label
-export function filterByHyakumeijo(destinations: Destination[]): Destination[] {
+export async function filterByHyakumeijo(
+  destinations: Destination[],
+): Promise<Destination[]> {
   return destinations.filter((destination) => {
     const labels = destination.destinations?.labels;
     return labels && Array.isArray(labels) && labels.includes('百名城');
@@ -21,12 +25,12 @@ export function filterByHyakumeijo(destinations: Destination[]): Destination[] {
 // Fetch all destinations
 export async function getDestinations(
   first: number = 10,
-  search: string = ''
+  search: string = '',
 ): Promise<Destination[]> {
   try {
     const data: DestinationsResponse = await fetchGraphQL(
       GET_DESTINATIONS_QUERY,
-      { first, search }
+      { first, search },
     );
     return data.destinations.edges.map((edge) => edge.node);
   } catch (error) {
@@ -38,17 +42,17 @@ export async function getDestinations(
 // Fetch destinations by taxonomy (to filter out destinations for areas pages)
 export async function GetDestinationsByTaxonomy(
   name: string,
-  first: number = 20
+  first: number = 20,
 ): Promise<Destination[]> {
   try {
     const data: GenreDestinationResponse = await fetchGraphQL(
       GET_DESTINATIONS_BY_TAXONOMY_QUERY,
-      { name: [name], first }
+      { name: [name], first },
     );
 
     // Extract all destinations from all matching genre nodes
     const destinations = data.allGenreDestination.nodes.flatMap(
-      (node) => node.destinations.nodes
+      (node) => node.destinations.nodes,
     );
 
     return destinations;
@@ -61,12 +65,12 @@ export async function GetDestinationsByTaxonomy(
 // Fetch taxonomy data with destinations
 export async function GetTaxonomyWithDestinations(
   name: string,
-  first: number = 20
+  first: number = 20,
 ): Promise<GenreDestinationResponse | null> {
   try {
     const data: GenreDestinationResponse = await fetchGraphQL(
       GET_DESTINATIONS_BY_TAXONOMY_QUERY,
-      { name: [name], first }
+      { name: [name], first },
     );
 
     return data;
@@ -78,7 +82,7 @@ export async function GetTaxonomyWithDestinations(
 
 // Fetch a single destination by slug
 export async function getDestinationBySlug(
-  slug: string
+  slug: string,
 ): Promise<Destination | null> {
   try {
     // Decode the slug in case it's URL-encoded
@@ -87,13 +91,13 @@ export async function getDestinationBySlug(
 
     const data: DestinationsResponse = await fetchGraphQL(
       GET_DESTINATION_BY_SLUG_QUERY,
-      { slug: decodedSlug }
+      { slug: decodedSlug },
     );
 
     const destination = data.destinations.edges[0]?.node || null;
     console.log(
       'Destination data received:',
-      destination ? 'Found' : 'Not found'
+      destination ? 'Found' : 'Not found',
     );
     return destination;
   } catch (error) {

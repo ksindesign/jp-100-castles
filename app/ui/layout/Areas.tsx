@@ -10,7 +10,7 @@ export default async function Areas({ areaName }: Areas) {
   // Fetch only destinations in the specific area by filtering the genreDestination taxonomy
   const allDestinations = await GetDestinationsByTaxonomy(areaName, 100);
   // Filter for 百名城 only
-  const destinations = filterByHyakumeijo(allDestinations);
+  const destinations = await filterByHyakumeijo(allDestinations);
 
   return (
     <section className='flex'>

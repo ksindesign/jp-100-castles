@@ -7,7 +7,7 @@ import DestinationsCarousel from './ui/components/DestinationsCarousel';
 export default async function Home() {
   // Fetch destinations and filter for 百名城 only
   const allDestinations = await getDestinations(100);
-  const destinations = filterByHyakumeijo(allDestinations);
+  const destinations = await filterByHyakumeijo(allDestinations);
 
   return (
     <>

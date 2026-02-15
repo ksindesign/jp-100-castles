@@ -23,6 +23,12 @@ query GetDestinations($first: Int = 10, $search: String = "") {
         }
         destinations {
           labels
+          fullAddress {
+            details
+            portal
+            lat
+            lng
+          }
           areas {
             edges {
               node {

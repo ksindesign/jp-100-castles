@@ -32,7 +32,7 @@ export async function generateStaticParams() {
   const allDestinations = await getDestinations(100);
 
   // Filter for 百名城 only
-  const destinations = filterByHyakumeijo(allDestinations);
+  const destinations = await filterByHyakumeijo(allDestinations);
 
   return destinations.map((destination) => ({
     slug: destination.slug,
@@ -271,7 +271,7 @@ export default async function DestinationPage({ params }: PageProps) {
             <div className='aspect-video w-full overflow-hidden h-[400]'>
               <iframe
                 src={`https://maps.google.com/maps?output=embed&q=${encodeURIComponent(
-                  destination.title
+                  destination.title,
                 )}&ll=${address.lat},${address.lng}&t=m&hl=ja&z=10`}
                 width='100%'
                 height='100%'

@@ -13,6 +13,10 @@ export const links = [
     href: '/destinations',
   },
   {
+    name: '地圖',
+    href: '/map',
+  },
+  {
     name: '關於我們',
     href: '/about',
   },
