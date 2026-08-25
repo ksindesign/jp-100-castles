@@ -40,6 +40,13 @@ export default function RootLayout({
       <head>
         <meta name='mobile-web-app-capable' content='yes' />
         <meta name='apple-mobile-web-app-capable' content='yes' />
+
+        {/* Google Adsense Scripts */}
+        <script
+          async
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7674144991054978'
+          crossOrigin='anonymous'
+        ></script>
       </head>
       <body
         className={`${manropeSans.variable} ${notoSansTC.variable} antialiased bg-white`}
